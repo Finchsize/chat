@@ -7,7 +7,7 @@ interface MessageProps {
   createdAt: Date;
 }
 
-export const Message = ({ authorNick, content, createdAt }: MessageProps) => (
+export const MessageBox = ({ authorNick, content, createdAt }: MessageProps) => (
   <Center mt="10">
     <Box
       p="5"
@@ -21,7 +21,7 @@ export const Message = ({ authorNick, content, createdAt }: MessageProps) => (
         <Text fontSize="xs">
           <Moment format="HH:mm YYYY-MM-DD" date={createdAt} />
         </Text>
-        <Text fontSize="2xl">{content}</Text>
+        <Text fontSize="xl">{content}</Text>
       </Stack>
     </Box>
   </Center>

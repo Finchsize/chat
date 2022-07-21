@@ -1,15 +1,10 @@
 import './App.css';
-import { Message } from './components';
+import { Dashboard } from './pages';
 
 function App() {
   return (
     <div className="App">
-      <Message
-        authorNick="Some Author"
-        createdAt={new Date()}
-        content='Pierwsza wiadomość'
-        key={'someKey'}
-      />
+      <Dashboard />
     </div>
   );
 }
