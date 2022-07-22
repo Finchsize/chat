@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./pages/Login";
 import axios from "axios";
 import { useState } from "react";
+import { Register } from "./pages/Register";
 
 const api = axios.create({
   baseURL: "http://localhost:8080",
@@ -14,9 +15,8 @@ const api = axios.create({
 function App() {
   const [jwt, setJwt] = useState("");
 
-  const sendLoginReq = (loginDetails: any) => {
-    api
-      .post("/login", loginDetails)
+  const sendLoginReq = async(loginDetails: any) => {
+    await api.post("/login", loginDetails)
       .then((res) => {
         setJwt(res.data);
       })
@@ -47,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login onLogin={sendLoginReq} />} />
         <Route path="/chat" element={<Chat jwtToken={jwt} />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </>
