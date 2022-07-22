@@ -8,7 +8,7 @@ interface MessageProps {
 }
 
 export const MessageBox = ({ authorNick, content, createdAt }: MessageProps) => (
-  <Center mt="10">
+  <Center mt="4">
     <Box
       p="5"
       maxW="sm"
